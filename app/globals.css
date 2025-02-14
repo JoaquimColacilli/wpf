@@ -1,0 +1,214 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #000814;
+  --dark-blue: #001233;
+}
+
+body {
+  background-color: var(--background);
+  color: white;
+}
+
+/* Estilos para la sección hero */
+.hero-section {
+  @apply relative min-h-screen flex items-center justify-center;
+  background: linear-gradient(rgba(0, 8, 20, 0.7), rgba(0, 8, 20, 0.7)),
+    url("https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=2070")
+      center/cover;
+}
+
+/* Animaciones de scroll */
+.scroll-reveal {
+  opacity: 0;
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.scroll-reveal.fade-up {
+  transform: translateY(20px);
+}
+
+.scroll-reveal.fade-right {
+  transform: translateX(20px);
+}
+
+.scroll-reveal.fade-left {
+  transform: translateX(-20px);
+}
+
+.scroll-reveal.active {
+  opacity: 1;
+  transform: translate(0);
+}
+
+.scroll-reveal.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Variantes de animación */
+.fade-up {
+  transform: translateY(50px);
+}
+
+.fade-up.visible {
+  transform: translateY(0);
+}
+
+.fade-left {
+  transform: translateX(-50px);
+}
+
+.fade-left.visible {
+  transform: translateX(0);
+}
+
+.fade-right {
+  transform: translateX(50px);
+}
+
+.fade-right.visible {
+  transform: translateX(0);
+}
+
+.scale-up {
+  transform: scale(0.8);
+}
+
+.scale-up.visible {
+  transform: scale(1);
+}
+
+.rotate-in {
+  transform: rotate(-10deg) scale(0.9);
+}
+
+.rotate-in.visible {
+  transform: rotate(0) scale(1);
+}
+
+/* Delays para animaciones en cascada */
+.delay-200 {
+  transition-delay: 200ms;
+}
+.delay-400 {
+  transition-delay: 400ms;
+}
+.delay-600 {
+  transition-delay: 600ms;
+}
+
+/* Estilos para las cards de "¿Por qué elegirnos?" */
+.why-choose-card {
+  @apply backdrop-blur-sm rounded-xl overflow-hidden transition-all duration-300 hover:transform hover:-translate-y-2;
+  background: rgba(0, 18, 51, 0.2);
+  border: 1px solid rgba(57, 255, 20, 0.1);
+}
+
+.why-choose-icon-wrapper {
+  @apply w-16 h-16 rounded-full backdrop-blur-md flex items-center justify-center border border-[#39FF14]/30;
+  background: rgba(57, 255, 20, 0.1);
+}
+
+/* Estilos para las cards de programas */
+.program-card-new {
+  @apply backdrop-blur-sm rounded-xl overflow-hidden transition-all duration-300;
+  background: rgba(0, 18, 51, 0.2);
+  border: 1px solid rgba(57, 255, 20, 0.1);
+}
+
+.program-card-new:hover {
+  transform: translateY(-8px);
+  border-color: rgba(57, 255, 20, 0.3);
+  box-shadow: 0 10px 30px rgba(57, 255, 20, 0.1);
+}
+
+.program-icon-new {
+  @apply w-14 h-14 rounded-full backdrop-blur-md flex items-center justify-center border border-[#39FF14]/30;
+  background: rgba(57, 255, 20, 0.1);
+}
+
+/* Estilos para los testimonios */
+.testimonial-card {
+  @apply p-6 rounded-lg transition-all duration-300;
+  background: linear-gradient(
+    145deg,
+    rgba(0, 11, 31, 0.9),
+    rgba(0, 8, 20, 0.8)
+  );
+  border: 1px solid rgba(57, 255, 20, 0.1);
+}
+
+.testimonial-card:hover {
+  border-color: rgba(57, 255, 20, 0.3);
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(57, 255, 20, 0.2);
+}
+
+/* Estilos para el navbar */
+.navbar-transparent {
+  @apply fixed w-full bg-transparent;
+}
+
+.navbar-fixed {
+  @apply fixed w-full backdrop-blur-md border-b border-[#39FF14]/20;
+  background: rgba(0, 8, 20, 0.9);
+}
+
+/* Efectos de texto neón */
+.neon-text-green {
+  color: #39ff14;
+  text-shadow: 0 0 5px rgba(57, 255, 20, 0.5), 0 0 10px rgba(57, 255, 20, 0.3),
+    0 0 15px rgba(57, 255, 20, 0.2);
+}
+
+.neon-text-blue {
+  color: #39ff14;
+  text-shadow: 0 0 5px rgba(57, 255, 20, 0.5), 0 0 10px rgba(57, 255, 20, 0.3),
+    0 0 15px rgba(57, 255, 20, 0.2);
+}
+
+/* Divisor de secciones */
+.section-divider-fade {
+  height: 2px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(57, 255, 20, 0.2),
+    rgba(57, 255, 20, 0.3),
+    rgba(57, 255, 20, 0.2),
+    transparent
+  );
+}
+
+/* Animaciones */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 1s ease-out forwards;
+}
